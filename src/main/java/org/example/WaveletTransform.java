@@ -25,8 +25,8 @@ public class WaveletTransform {
         if (SourceList.toArray().length == 1)
             return SourceList;
 
-        ArrayList<Double> RetVal = new ArrayList<Double>();
-        ArrayList<Double> TmpPart = new ArrayList<Double>();
+        ArrayList<Double> RetVal = new ArrayList<>();
+        ArrayList<Double> TmpPart = new ArrayList<>();
 
         for (int i = SourceList.toArray().length / 2; i < SourceList.toArray().length; i++)
             TmpPart.add(SourceList.get(i));
@@ -73,8 +73,8 @@ public class WaveletTransform {
     public ArrayList<double[][]> arrayOfMatrixDirectTransform(ArrayList<double[][]> arrayOf8x8Matrix) {
         ArrayList<double[][]> arrayOfMatrixDirectTransform = new ArrayList<>();
 
-        for (int i = 0; i < arrayOf8x8Matrix.size(); i++) {
-            double[][] tmpMatrix = matrixDirectTransform(new Matrix(8, 8, arrayOf8x8Matrix.get(i)).getMatrix());
+        for (double[][] of8x8Matrix : arrayOf8x8Matrix) {
+            double[][] tmpMatrix = matrixDirectTransform(new Matrix(8, 8, of8x8Matrix).getMatrix());
             arrayOfMatrixDirectTransform.add(tmpMatrix);
         }
 
@@ -84,8 +84,8 @@ public class WaveletTransform {
     public ArrayList<double[][]> arrayOfMatrixInverseTransform(ArrayList<double[][]> arrayOf8x8Matrix) {
         ArrayList<double[][]> arrayOfMatrixInverseTransform = new ArrayList<>();
 
-        for (int i = 0; i < arrayOf8x8Matrix.size(); i++){
-            double[][] tmpMatrix = matrixInverseTransform(new Matrix(8, 8, arrayOf8x8Matrix.get(i)).getMatrix());
+        for (double[][] of8x8Matrix : arrayOf8x8Matrix) {
+            double[][] tmpMatrix = matrixInverseTransform(new Matrix(8, 8, of8x8Matrix).getMatrix());
             arrayOfMatrixInverseTransform.add(tmpMatrix);
         }
 

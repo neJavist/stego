@@ -29,7 +29,7 @@ public class Video {
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "gbk");
             int len = -1;
             char[] c = new char[1024];
-            StringBuffer outputString = new StringBuffer();
+            StringBuilder outputString = new StringBuilder();
             while ((len = inputStreamReader.read(c)) != -1) {
                 String s = new String(c, 0, len);
                 outputString.append(s);
@@ -62,7 +62,7 @@ public class Video {
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "gbk");
             int len = -1;
             char[] c = new char[1024];
-            StringBuffer outputString = new StringBuffer();
+            StringBuilder outputString = new StringBuilder();
             while ((len = inputStreamReader.read(c)) != -1) {
                 String s = new String(c, 0, len);
                 outputString.append(s);
